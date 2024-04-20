@@ -5,7 +5,7 @@ function Header(){
     return(
         <Row>
             <Col>
-               <div className={s.root}>Header</div>
+               <div className={s.root}>To-Do List</div>
             </Col>
         </Row>
     )
