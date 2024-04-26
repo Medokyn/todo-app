@@ -1,8 +1,10 @@
 import React, { useEffect, useState} from "react";
-import { Col, Row, Button, FormControl } from "react-bootstrap";
+import { Col, Row, Button, FormControl, ButtonGroup } from "react-bootstrap";
 import s from './TodoList.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faSave, faTrashCan, faSquarePen, faLock, faLockOpen, faSquare } from '@fortawesome/free-solid-svg-icons' 
+
+
 function TodoList({todo, setTodo}){
 
     const [edit, setEdit] = useState(null)
@@ -58,11 +60,11 @@ function TodoList({todo, setTodo}){
         <div>
             <Row>
                 <Col className={s.filter}>
-                    <div class="btn-group" role="group" aria-label="Basic example" className={s.btns}>
-                         <button type="button" class="btn btn-secondary" onClick={()=>todoFilter('all')}>All</button>
-                         <button type="button" class="btn btn-secondary" onClick={()=>todoFilter(true)}>Opened</button>
-                         <button type="button" class="btn btn-secondary" onClick={()=>todoFilter(false)}>Close</button>
-                    </div>
+                    <ButtonGroup aria-label="Basic example" className={s.btns}>
+                         <Button variant="secondary" onClick={()=>todoFilter('all')}>All</Button>
+                         <Button variant="secondary" onClick={()=>todoFilter(true)}>Opened</Button>
+                         <Button variant="secondary" onClick={()=>todoFilter(false)}>Close</Button>
+                    </ButtonGroup>
                 </Col>
             </Row>
             {
