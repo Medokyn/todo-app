@@ -8,21 +8,7 @@ import { Container } from 'react-bootstrap';
 
 function App() {
   const [todo, setTodo] = useState([
-    {
-      id: 1,
-      title: 'first todolist',
-      status: true
-    },
-    {
-      id: 2,
-      title: 'second todolist',
-      status: true
-    },
-    {
-      id: 3,
-      title: 'third todolist',
-      status: false
-    },
+
   ])
 
   
