@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import { Col, Row, Button, FormControl } from "react-bootstrap";
 import s from './TodoList.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faSave, faTrashCan, faSquarePen, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons' 
+import {faSave, faTrashCan, faSquarePen, faLock, faLockOpen, faSquare } from '@fortawesome/free-solid-svg-icons' 
 function TodoList({todo, setTodo}){
 
     const [edit, setEdit] = useState(null)
