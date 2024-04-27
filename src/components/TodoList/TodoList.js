@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import { Col, Row, Button, FormControl, ButtonGroup } from "react-bootstrap";
 import s from './TodoList.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faSave, faTrashCan, faSquarePen, faLock, faLockOpen, faSquare } from '@fortawesome/free-solid-svg-icons' 
+import {faSave, faTrashCan, faSquarePen, faLock, faLockOpen, faSquare, faCheck, faX} from '@fortawesome/free-solid-svg-icons' 
 
 
 function TodoList({todo, setTodo}){
@@ -81,14 +81,14 @@ function TodoList({todo, setTodo}){
                     {
                         edit == item.id ?
                         <div>
-                            <Button onClick={ ()=> saveTodo (item.id) } size="sm"><FontAwesomeIcon icon = {faSave}/></Button>
+                            <Button onClick={ ()=> saveTodo (item.id) }><FontAwesomeIcon icon = {faSave}/></Button>
                         </div> :
                         <div>
-                             <Button onClick={ ()=>deleteTodo(item.id)} size="sm"><FontAwesomeIcon icon = {faTrashCan}/></Button>
-                             <Button onClick={ ()=>editTodo(item.id, item.title)} className={s.btn} size="sm"><FontAwesomeIcon icon = {faSquarePen}/></Button>
-                             <Button onClick={ ()=>statusTodo(item.id)} className={s.btn} size="sm">
+                             <Button onClick={ ()=>deleteTodo(item.id)}><FontAwesomeIcon icon = {faTrashCan}/></Button>
+                             <Button onClick={ ()=>editTodo(item.id, item.title)} className={s.btn}><FontAwesomeIcon icon = {faSquarePen}/></Button>
+                             <Button onClick={ ()=>statusTodo(item.id)} className={s.btn}>
                             {
-                                item.status  ? <FontAwesomeIcon icon = {faLockOpen}/> : <FontAwesomeIcon icon = {faLock}/>
+                                item.status  ? <FontAwesomeIcon icon = {faX}/> : <FontAwesomeIcon icon = {faCheck}/>
                             }
                            </Button>       
                         </div>
