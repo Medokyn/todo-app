@@ -8,15 +8,18 @@
     flex-direction: row;
     margin-top: 24px;
     padding: 7px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .ListItem:hover{
-    background: rgba(0, 0, 0, 0.521);
+    background: rgb(0, 89, 92);
     border-radius: 8px;
+    
 }
 
 .close{
-    color: rgb(124, 58, 58);
+    color: #808080;
     text-decoration: line-through;
 }
 

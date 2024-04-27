@@ -11,11 +11,11 @@ function TodoList({todo, setTodo}){
     const [value, setValue] = useState('')
     const [filtered, setFiltered] = useState(todo)
 
-    useEffect(()=>{  //Будет выполняться после каждой прорисовки страницы
+    useEffect(()=>{  //Для обновления фильтрованного списка задач
         setFiltered(todo)
     },[todo])
 
-    function todoFilter(status){
+    function todoFilter(status){ // Для фильраций задач по статусу 
         if(status === 'all'){
             setFiltered(todo)
         } else{
@@ -24,12 +24,12 @@ function TodoList({todo, setTodo}){
         }
     }
 
-    function deleteTodo(id){
+    function deleteTodo(id){ // Для удаления задач 
         let newTodo = [...todo].filter(item => item.id!=id)
         setTodo(newTodo)
     }
 
-    function statusTodo(id){
+    function statusTodo(id){ // Для изменения статуса задачи
         let newTodo = [...todo].filter(item =>{
             if(item.id == id){
                 item.status = !item.status
@@ -45,7 +45,7 @@ function TodoList({todo, setTodo}){
         setValue(title)
     }
 
-    function saveTodo(id) {
+    function saveTodo(id) { // Для сохранения измен.задачи
         let newTodo = [...todo].map (item => {
             if (item.id == id){
                 item.title = value
@@ -63,7 +63,7 @@ function TodoList({todo, setTodo}){
                     <ButtonGroup aria-label="Basic example" className={s.btns}>
                          <Button variant="secondary" onClick={()=>todoFilter('all')}>All</Button>
                          <Button variant="secondary" onClick={()=>todoFilter(true)}>Opened</Button>
-                         <Button variant="secondary" onClick={()=>todoFilter(false)}>Close</Button>
+                         <Button variant="secondary" onClick={()=>todoFilter(false)}>Completed</Button>
                     </ButtonGroup>
                 </Col>
             </Row>
