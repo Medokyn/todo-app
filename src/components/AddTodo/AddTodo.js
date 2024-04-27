@@ -45,7 +45,9 @@ function AddTodo({ todo, setTodo }) {
     return (
         <Row>
             <Col className={s.addTodoForm}>
-                <FormControl placeholder="Enter the task" value={value} onChange={(e) => setValue(e.target.value)} />
+                <FormControl
+                
+                 size="lg" placeholder="Enter the task" value={value} onChange={(e) => setValue(e.target.value)} />
                 <Button onClick={saveTodo} className={s.btn}>Add</Button>
             </Col>
         </Row>

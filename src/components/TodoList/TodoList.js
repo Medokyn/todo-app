@@ -61,9 +61,9 @@ function TodoList({todo, setTodo}){
             <Row>
                 <Col className={s.filter}>
                     <ButtonGroup aria-label="Basic example" className={s.btns}>
-                         <Button variant="secondary" onClick={()=>todoFilter('all')}>All</Button>
-                         <Button variant="secondary" onClick={()=>todoFilter(true)}>Opened</Button>
-                         <Button variant="secondary" onClick={()=>todoFilter(false)}>Completed</Button>
+                         <Button variant="dark" onClick={()=>todoFilter('all')}>All</Button>
+                         <Button variant="dark" onClick={()=>todoFilter(true)}>Opened</Button>
+                         <Button variant="dark" onClick={()=>todoFilter(false)}>Completed</Button>
                     </ButtonGroup>
                 </Col>
             </Row>
